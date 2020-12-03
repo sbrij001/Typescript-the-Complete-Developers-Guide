@@ -13,12 +13,15 @@ interface Todo {
    const todo = response.data as Todo;
    const id = todo.id;
    const title = todo.title;
-   const finished = todo.completed;
+   const completed = todo.completed;
 
-   console.log(`
+   logTodo(id,title,completed);
+ });
+
+ const logTodo = (id: number, title: string, completed: boolean) => {
+  console.log(`
     the todo with ID: ${id}
     had a title of: ${title}
-    is it finished? ${finished}
-   `);
-
- });
+    is it completed? ${completed}
+  `);
+ }
